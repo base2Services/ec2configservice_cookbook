@@ -1,5 +1,5 @@
 # EC2 Config Service Cookbook
-[![Cookbook](http://img.shields.io/cookbook/v/flyway.svg)](https://github.com/base2Services/ec2configservice_cookbook)
+[![Cookbook](http://img.shields.io/cookbook/v/ec2configservice.svg)](https://github.com/base2Services/ec2configservice_cookbook)
 
 Installs and Configures the EC2 config services
 
