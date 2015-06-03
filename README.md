@@ -3,7 +3,7 @@
 
 Installs and Configures the EC2 config services
 
-0.1.0 - Currently only supports:
+0.1.2 - Currently only supports:
   * Installation of the latest EC2 config service
   * Wallpaper Settings config
 
