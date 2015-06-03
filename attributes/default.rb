@@ -17,8 +17,10 @@
 # limitations under the License.
 #
 
+default['ec2config']['install_url'] = 'https://ec2-downloads-windows.s3.amazonaws.com/EC2Config/EC2Install.zip'
+
 # Default WallpaperSettings.xml values
-default['amazon']['ec2config']['wallpaper']['default'] = [
+default['ec2config']['wallpaper']['default'] = [
   {
     name: 'Hostname',
     source: 'built-in',
@@ -64,7 +66,7 @@ default['amazon']['ec2config']['wallpaper']['default'] = [
 ]
 
 # Override this attribute to add custom wallpaper values
-default['amazon']['ec2config']['wallpaper']['custom'] = [
+default['ec2config']['wallpaper']['custom'] = [
   {
     name: 'EC2 Config Cookbook Version',
     source: 'environmentvariable',

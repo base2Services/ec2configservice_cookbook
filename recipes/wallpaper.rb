@@ -17,7 +17,7 @@
 # limitations under the License.
 #
 
-node['amazon']['ec2config']['wallpaper']['custom'].each do |setting|
+node['ec2config']['wallpaper']['custom'].each do |setting|
   if setting.source == 'environmentvariable' && !setting.value.nil?
     env setting.identifier do
       value setting.value
@@ -28,7 +28,7 @@ end
 template 'C:\\Program Files\\Amazon\\Ec2ConfigService\\Settings\\WallpaperSettings.xml' do
   source 'WallpaperSettings.xml.erb'
   variables(
-    default_settings: node['amazon']['ec2config']['wallpaper']['default'],
-    custom_settings: node['amazon']['ec2config']['wallpaper']['custom']
+    default_settings: node['ec2config']['wallpaper']['default'],
+    custom_settings: node['ec2config']['wallpaper']['custom']
   )
 end

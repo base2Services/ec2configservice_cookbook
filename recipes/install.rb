@@ -1,6 +1,6 @@
 #
 # Cookbook Name:: ec2configservice
-# Recipe:: default
+# Recipe:: install
 #
 # Copyright (C) 2015 base2Services
 #
@@ -17,5 +17,13 @@
 # limitations under the License.
 #
 
-include_recipe 'ec2configservice::install'
-include_recipe 'ec2configservice::wallpaper'
+windows_zipfile "#{Chef::Config[:file_cache_path]}" do
+  source node['ec2config']['install_url']
+  action :unzip
+  not_if { ::File.exist?("#{Chef::Config[:file_cache_path]}/Ec2Install.exe") }
+end
+
+windows_package 'EC2ConfigService' do
+  source "#{Chef::Config[:file_cache_path]}/EC2Install.exe"
+  action :install
+end

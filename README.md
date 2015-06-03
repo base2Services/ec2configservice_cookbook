@@ -1,6 +1,11 @@
 # EC2 Config Service Cookbook
+[![Cookbook](http://img.shields.io/cookbook/v/flyway.svg)](https://github.com/base2Services/flyway_cookbook)
 
-TODO: Enter the cookbook description here.
+Installs and Configures the EC2 config services
+
+0.1.0 - Currently only supports:
+  * Installation of the latest EC2 config service
+  * Wallpaper Settings config
 
 ## Supported Platforms
 
@@ -16,10 +21,19 @@ TODO: Enter the cookbook description here.
     <th>Default</th>
   </tr>
   <tr>
-    <td><tt>['ec2configservice']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
+    <td><tt>['ec2config']['wallpaper']['default']</tt></td>
+    <td>Array</td>
+    <td>array of settings to add to the wallpaper</td>
+    <td>
+      <tt>[{
+            name: 'Hostname',
+            source: 'built-in',
+            identifier: 'hostname',
+            value: nil
+          },
+          .......
+      </tt>
+    </td>
   </tr>
 </table>
 
@@ -38,5 +52,7 @@ Include `ec2configservice` in your node's `run_list`:
 ```
 
 ## License and Authors
+License:: Apache License, Version 2.0
 
-Author:: YOUR_NAME (<YOUR_EMAIL>)
+Authors::
+ * Aaron Walker - base2Services
